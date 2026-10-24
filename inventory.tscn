@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bmexgepuom3tu"]
+
+[ext_resource type="Texture2D" uid="uid://cfe0vus4ik0jx" path="res://Sample-InventorySlotsSet.png" id="1_pohso"]
+[ext_resource type="Script" uid="uid://cvvj7r1v6c4il" path="res://inventory.gd" id="1_psafj"]
+[ext_resource type="Texture2D" uid="uid://p7ogceg20aml" path="res://plants pack/plants.png" id="3_5tt2m"]
+
+[node name="Node2D" type="Node2D" unique_id=446752292]
+script = ExtResource("1_psafj")
+
+[node name="Inventory" type="Sprite2D" parent="." unique_id=187665229]
+texture_filter = 1
+texture = ExtResource("1_pohso")
+centered = false
+
+[node name="Slot1" type="Sprite2D" parent="Inventory" unique_id=916600873]
+position = Vector2(12, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
+region_rect = Rect2(3, 3, 16, 16)
