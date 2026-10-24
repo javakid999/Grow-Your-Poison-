@@ -28,5 +28,5 @@ func update_item(slot, item_id):
 		return
 	else:
 		#show
-		#items[slot].region_rect = Rect2(3 + 20 * item_id, 3, 16, 16)
+		items[slot].region_rect = Rect2(3 + 21 * item_id, 3, 16, 16)
 		pass

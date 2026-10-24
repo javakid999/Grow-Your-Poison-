@@ -17,4 +17,39 @@ position = Vector2(12, 12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_5tt2m")
 region_enabled = true
+region_rect = Rect2(22, 3, 16, 16)
+
+[node name="Slot2" type="Sprite2D" parent="Inventory" unique_id=715975160]
+position = Vector2(29.000002, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
+region_rect = Rect2(3, 3, 16, 16)
+
+[node name="Slot3" type="Sprite2D" parent="Inventory" unique_id=2098754332]
+position = Vector2(46.000004, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
+region_rect = Rect2(44, 3, 16, 16)
+
+[node name="Slot4" type="Sprite2D" parent="Inventory" unique_id=1865667143]
+position = Vector2(63.000008, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
+region_rect = Rect2(66, 3, 16, 16)
+
+[node name="Slot5" type="Sprite2D" parent="Inventory" unique_id=1330243481]
+position = Vector2(80, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
+region_rect = Rect2(3, 3, 16, 16)
+
+[node name="Slot6" type="Sprite2D" parent="Inventory" unique_id=1742966367]
+position = Vector2(97, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_5tt2m")
+region_enabled = true
 region_rect = Rect2(3, 3, 16, 16)

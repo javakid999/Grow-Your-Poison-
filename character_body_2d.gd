@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-@onready var camera: Camera2D = $Camera2D
+@export var camera: Camera2D
 
 func _physics_process(delta: float) -> void:
 	
@@ -26,4 +26,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	global_position = global_position
 	move_and_slide()
