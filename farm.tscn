@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dblaxdr3g1ffi" path="res://kenney_isometric-blocks/Spritesheet/voxelTiles_sheet.png" id="1_bw225"]
 [ext_resource type="Script" uid="uid://b0m483dbtlqqj" path="res://tile_map_layer.gd" id="2_07l7t"]
-[ext_resource type="Script" uid="uid://20o5ow6kpwto" path="res://character_body_2d.gd" id="2_t23pn"]
-[ext_resource type="Texture2D" uid="uid://donchwwtodrch" path="res://kenney_isometric-blocks/PNG/Abstract tiles/abstractTile_23.png" id="2_vkr66"]
 [ext_resource type="Texture2D" uid="uid://bnuhkkqnfbu84" path="res://kenney_isometric-blocks/PNG/Platformer tiles/platformerTile_48.png" id="3_07l7t"]
-[ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="6_jynu1"]
+[ext_resource type="PackedScene" uid="uid://yqhgqefk5wpv" path="res://player.tscn" id="4_07l7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t23pn"]
 texture = ExtResource("1_bw225")
@@ -63,28 +61,4 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAPr/AAAAAAAAAQABAPn/AAAAAAAAAQAEAPv/AAAAAAAAAQAEAPz/AAAAAAAAAQAFAPz/AAAAAAAAAQAGAP3/AAAAAAAAAQAGAP7/AAAAAAAAAQAGAP//AAAAAAAAAQAGAAAAAAAAAAAAAQAFAAEAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAMAAAAAAAAAAQADAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAQAAAAAAAAAAQACAAQAAAAAAAAAAQACAAUAAAAAAAAAAQABAAYAAAAAAAAAAQAAAAYAAAAAAAAAAQD//wYAAAAAAAAAAQD+/wUAAAAAAAAAAQD9/wUAAAAAAAAAAQD8/wUAAAAAAAAAAQD8/wQAAAAAAAAAAQD7/wQAAAAAAAAAAQD7/wMAAAAAAAAAAQD6/wMAAAAAAAAAAQD6/wIAAAAAAAAAAQD5/wIAAAAAAAAAAQD5/wEAAAAAAAAAAQD5/wAAAAAAAAAAAQD5////AAAAAAAAAQD4////AAAAAAAAAQD4//7/AAAAAAAAAQD4//3/AAAAAAAAAQD4//z/AAAAAAAAAQD4//v/AAAAAAAAAQD5//v/AAAAAAAAAQD5//r/AAAAAAAAAQD5//n/AAAAAAAAAQD6//n/AAAAAAAAAQD6//j/AAAAAAAAAQD7//j/AAAAAAAAAQD7//f/AAAAAAAAAQD8//f/AAAAAAAAAQD9//f/AAAAAAAAAQD+//f/AAAAAAAAAQD///f/AAAAAAAAAQD///j/AAAAAAAAAQAAAPj/AAAAAAAAAQACAPn/AAAAAAAAAQABAPj/AAAAAAAAAQADAPn/AAAAAAAAAQAEAPr/AAAAAAAAAQAGAPz/AAAAAAAAAQAGAAEAAAAAAAAAAQACAAYAAAAAAAAAAQD+/wYAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_7spbl")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1368316544]
-position = Vector2(100, -100)
-script = ExtResource("2_t23pn")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1494524743]
-texture = ExtResource("2_vkr66")
-centered = false
-offset = Vector2(-56, -128)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1690793943]
-position = Vector2(0, -64)
-polygon = PackedVector2Array(0, 0, 55, 32, 0, 64, -56, 32)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1146468702]
-position = Vector2(-2, 26)
-zoom = Vector2(1.1, 1.1)
-limit_left = -499
-limit_top = -500
-limit_right = 666
-limit_bottom = 383
-
-[node name="Node2D" parent="CharacterBody2D/Camera2D" unique_id=446752292 instance=ExtResource("6_jynu1")]
-z_index = 9
-position = Vector2(-98, 74)
-scale = Vector2(5, 5)
+[node name="Player" parent="." unique_id=1437705335 instance=ExtResource("4_07l7t")]
