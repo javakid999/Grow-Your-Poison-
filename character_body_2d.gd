@@ -1,11 +1,9 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 @export var camera: Camera2D
 
 func _physics_process(delta: float) -> void:
-	
 	var mouse_pos = get_local_mouse_position()
 	camera.offset = mouse_pos / 30
 	

@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://cvvj7r1v6c4il" path="res://inventory.gd" id="1_psafj"]
 [ext_resource type="Texture2D" uid="uid://p7ogceg20aml" path="res://plants pack/plants.png" id="3_5tt2m"]
 
-[node name="Node2D" type="Node2D" unique_id=446752292]
+[sub_resource type="LabelSettings" id="LabelSettings_7spbl"]
+font_size = 30
+
+[node name="Inventory" type="Node2D" unique_id=446752292]
+scale = Vector2(4, 4)
 script = ExtResource("1_psafj")
 
 [node name="Inventory" type="Sprite2D" parent="." unique_id=187665229]
@@ -19,12 +23,28 @@ texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(22, 3, 16, 16)
 
+[node name="Label" type="Label" parent="Inventory/Slot1" unique_id=64971817]
+offset_right = 51.0
+offset_bottom = 42.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot2" type="Sprite2D" parent="Inventory" unique_id=715975160]
 position = Vector2(29.000002, 12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(3, 3, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot2" unique_id=84746425]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot3" type="Sprite2D" parent="Inventory" unique_id=2098754332]
 position = Vector2(46.000004, 12)
@@ -33,12 +53,28 @@ texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(44, 3, 16, 16)
 
+[node name="Label" type="Label" parent="Inventory/Slot3" unique_id=950717629]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot4" type="Sprite2D" parent="Inventory" unique_id=1865667143]
 position = Vector2(63.000008, 12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(66, 3, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot4" unique_id=1410214536]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot5" type="Sprite2D" parent="Inventory" unique_id=1330243481]
 position = Vector2(80, 12)
@@ -47,9 +83,25 @@ texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(3, 3, 16, 16)
 
+[node name="Label" type="Label" parent="Inventory/Slot5" unique_id=1262201128]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot6" type="Sprite2D" parent="Inventory" unique_id=1742966367]
 position = Vector2(97, 12)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_5tt2m")
 region_enabled = true
 region_rect = Rect2(3, 3, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot6" unique_id=1228498379]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true

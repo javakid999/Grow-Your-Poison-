@@ -27,3 +27,6 @@ func on_hover_changed(cell: Vector2i):
 	hover_sprite.visible = true
 	var target = tile_map.map_to_local(cell) * 8 + Vector2(0, -12 + 32)  # lifted 6px
 	hover_sprite.position = target
+
+func get_cell():
+	return hovered_cell
