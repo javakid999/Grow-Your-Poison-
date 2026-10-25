@@ -308,8 +308,10 @@ autoplay = true
 
 [connection signal="pressed" from="HUD/Button" to="HUD/Inventory" method="_on_toggle_shop"]
 [connection signal="dialogue_over" from="dialogue_trigger" to="Tiles" method="_on_dialogue_trigger_dialogue_over"]
+[connection signal="dialogue_over" from="dialogue_trigger" to="HUD/Inventory" method="_on_dialogue_trigger_dialogue_over"]
 [connection signal="dialogue_over" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_over"]
 [connection signal="dialogue_start" from="dialogue_trigger" to="Tiles" method="_on_dialogue_trigger_dialogue_start"]
+[connection signal="dialogue_start" from="dialogue_trigger" to="HUD/Inventory" method="_on_dialogue_trigger_dialogue_start"]
 [connection signal="dialogue_start" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_start"]
 [connection signal="quest_accepted" from="dialogue_trigger" to="QuestSubmission" method="quest_accepted"]
 [connection signal="quest_rejected" from="dialogue_trigger" to="QuestSubmission" method="quest_rejected"]

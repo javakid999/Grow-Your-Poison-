@@ -105,8 +105,11 @@ func give_harvested_item(id):
 	update_item(free_slot, item_ids[free_slot], item_count[free_slot])
 	update_selection_ghost()
 
+var is_interacting = false
+
 func _on_toggle_shop():
-	$"../Shop".visible = !$"../Shop".visible
+	if !is_interacting:
+		$"../Shop".visible = !$"../Shop".visible
 
 func _input(event):
 	if event.is_action_pressed('slot 1'):
@@ -130,3 +133,10 @@ func _input(event):
 	if event.is_action_pressed('shovel slot'):
 		selected_slot = -1
 		update_selection_ghost()
+
+func _on_dialogue_trigger_dialogue_start() -> void:
+	is_interacting = true
+	$"../Shop".visible = false
+
+func _on_dialogue_trigger_dialogue_over() -> void:
+	is_interacting = false
