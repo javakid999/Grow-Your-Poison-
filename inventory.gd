@@ -105,6 +105,9 @@ func give_harvested_item(id):
 	update_item(free_slot, item_ids[free_slot], item_count[free_slot])
 	update_selection_ghost()
 
+func _on_toggle_shop():
+	$"../Shop".visible = !$"../Shop".visible
+
 func _input(event):
 	if event.is_action_pressed('slot 1'):
 		selected_slot = 0
