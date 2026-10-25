@@ -1,15 +1,15 @@
 extends Node2D
 
 # Path to dialogue_ui instance in main scene
-@onready var dialogue_ui: CanvasLayer = get_tree().current_scene.get_node("dialogue_ui/canvas")
+@onready var dialogue_ui: CanvasLayer = get_tree().current_scene.get_node("Dialogue_UI/canvas")
 # Path to dialogue_ui speaker_name instance in main scene
-@onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("dialogue_ui/canvas/speaker_name")
+@onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("Dialogue_UI/canvas/speaker_name")
 # Path to dialogue_ui speaker_dialogue instance in main scene
-@onready var speaker_dialogue: RichTextLabel = get_tree().current_scene.get_node("dialogue_ui/canvas/speaker_dialogue")
+@onready var speaker_dialogue: RichTextLabel = get_tree().current_scene.get_node("Dialogue_UI/canvas/speaker_dialogue")
 # Path to player node in main scene
-@onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player Wrapper/Player")
+@onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
 # Path to dialogue_ui animation player instance in main scene
-@onready var dialogue_animation: AnimationPlayer = get_tree().current_scene.get_node("dialogue_ui/canvas/animation_player")
+@onready var dialogue_animation: AnimationPlayer = get_tree().current_scene.get_node("Dialogue_UI/canvas/animation_player")
 
 @onready var quest_button: Button = $quest_button
 

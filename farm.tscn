@@ -251,10 +251,10 @@ position = Vector2(584, 104)
 scale = Vector2(3, 3)
 texture = ExtResource("6_jynu1")
 
-[node name="player" parent="." unique_id=1254991437 instance=ExtResource("7_dmuu5")]
+[node name="Player" parent="." unique_id=1254991437 instance=ExtResource("7_dmuu5")]
 position = Vector2(99, -73)
 
-[node name="Player#Camera2D" type="Camera2D" parent="player" unique_id=2129106911]
+[node name="Player#Camera2D" type="Camera2D" parent="Player" unique_id=2129106911]
 position = Vector2(-0.25, -0.25)
 scale = Vector2(0.25, 0.25)
 zoom = Vector2(1.1, 1.1)
@@ -267,5 +267,5 @@ limit_bottom = 820
 
 [node name="dialogue_trigger" parent="." unique_id=1617316960 instance=ExtResource("8_kmnj1")]
 
-[connection signal="dialogue_over" from="dialogue_trigger" to="player" method="_on_dialogue_trigger_dialogue_over"]
-[connection signal="dialogue_start" from="dialogue_trigger" to="player" method="_on_dialogue_trigger_dialogue_start"]
+[connection signal="dialogue_over" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_over"]
+[connection signal="dialogue_start" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_start"]
