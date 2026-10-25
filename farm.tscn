@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://b0m483dbtlqqj" path="res://tile_map_layer.gd" id="2_07l7t"]
 [ext_resource type="Texture2D" uid="uid://p7ogceg20aml" path="res://plants pack/plants.png" id="3_07l7t"]
 [ext_resource type="Texture2D" uid="uid://o4rf6yuuvmbs" path="res://Farm RPG FREE 16x16 - Tiny Asset Pack/Tileset/Tileset Grass Spring.png" id="3_t23pn"]
-[ext_resource type="PackedScene" uid="uid://yqhgqefk5wpv" path="res://player.tscn" id="4_07l7t"]
 [ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="5_07l7t"]
 [ext_resource type="Script" uid="uid://bblq758lw34le" path="res://player_wrapper.gd" id="5_jynu1"]
+[ext_resource type="PackedScene" uid="uid://dmqw76yhsf0x" path="res://scenes/player.tscn" id="7_dmuu5"]
+[ext_resource type="PackedScene" uid="uid://c88s58o4i17m0" path="res://scenes/dialogue_ui.tscn" id="7_v46g0"]
+[ext_resource type="PackedScene" uid="uid://d4hpefyvyso43" path="res://scenes/dialogue_trigger.tscn" id="8_kmnj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l7t"]
 texture = ExtResource("3_t23pn")
@@ -232,13 +234,21 @@ scale = Vector2(5, 5)
 [node name="Player Wrapper" type="Node2D" parent="." unique_id=1556805622]
 script = ExtResource("5_jynu1")
 
-[node name="Player" parent="Player Wrapper" unique_id=1437705335 node_paths=PackedStringArray("camera") instance=ExtResource("4_07l7t")]
-camera = NodePath("Camera2D")
+[node name="Player" parent="Player Wrapper" unique_id=1254991437 instance=ExtResource("7_dmuu5")]
 
 [node name="Camera2D" type="Camera2D" parent="Player Wrapper/Player" unique_id=2129106911]
-position = Vector2(98, -74)
+position = Vector2(24.25, -18.75)
+scale = Vector2(0.25, 0.25)
 zoom = Vector2(1.1, 1.1)
 limit_left = -499
 limit_top = -500
 limit_right = 750
 limit_bottom = 620
+
+[node name="dialogue_ui" parent="." unique_id=863977405 instance=ExtResource("7_v46g0")]
+
+[node name="dialogue_trigger" parent="." unique_id=1617316960 instance=ExtResource("8_kmnj1")]
+position = Vector2(-124, 244)
+
+[connection signal="dialogue_over" from="dialogue_trigger" to="Player Wrapper/Player" method="_on_dialogue_trigger_dialogue_over"]
+[connection signal="dialogue_start" from="dialogue_trigger" to="Player Wrapper/Player" method="_on_dialogue_trigger_dialogue_start"]

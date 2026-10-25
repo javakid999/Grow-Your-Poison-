@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d4hpefyvyso43"]
+
+[ext_resource type="Script" uid="uid://c1tcrcw8eirob" path="res://scripts/dialogue_trigger.gd" id="1_o7blk"]
+[ext_resource type="Texture2D" uid="uid://bs8tlwn0ompqt" path="res://assets/images/obstacles/Isometric Assets 2.png" id="2_wktwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huuou"]
+
+[node name="dialogue_trigger" type="Node2D" unique_id=1617316960]
+script = ExtResource("1_o7blk")
+dialogues = Array[String](["My liege's decision-making skills have been suffering lately, I suspect due to a lack of rest. I would like a concotion that will grant him... eternal sleep, if you know what I mean.", "My liege has been just so exhausted from all the work he does, he barely has any... energy at bed time. I'd like something that can lift his spirits. I expect you not to say a word of my presence here..."])
+speaker_names = Array[String](["Eunich", "Imperial Concubine"])
+metadata/_edit_group_ = true
+
+[node name="trigger" type="Area2D" parent="." unique_id=1375900360]
+visible = false
+
+[node name="collision" type="CollisionShape2D" parent="trigger" unique_id=1295929292]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_huuou")
+
+[node name="sprite_sign" type="Sprite2D" parent="." unique_id=1524980114]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wktwx")
+region_enabled = true
+region_rect = Rect2(1090.5564, 781.2735, 161.52051, 203.96582)
+
+[node name="quest_button" type="Button" parent="." unique_id=285920465]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="quest_button" to="." method="start_dialogue"]
