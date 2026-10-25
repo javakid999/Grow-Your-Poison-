@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c88s58o4i17m0"]
 
-[ext_resource type="Texture2D" uid="uid://duav38i82146r" path="res://assets/images/character_sprites/Imperial Concubine.png" id="1_dwk8m"]
+[ext_resource type="Texture2D" uid="uid://dwpgmhj4ayk5g" path="res://assets/images/character_sprites/Eunuch.png" id="1_dwk8m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ioo0"]
 bg_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
@@ -119,7 +119,7 @@ speed_scale = 0.5
 
 [node name="speaker_sprite" type="Sprite2D" parent="canvas" unique_id=1949162503]
 z_index = -1
-position = Vector2(890.99994, 375)
-scale = Vector2(0.7875458, 0.76682407)
+position = Vector2(1083, 375)
+scale = Vector2(0.3, 0.292)
 texture = ExtResource("1_dwk8m")
 region_rect = Rect2(1134.4695, 1687.3607, 610.5676, 846.62537)

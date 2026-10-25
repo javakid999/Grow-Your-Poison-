@@ -21,7 +21,7 @@ size = Vector2(2.2, 10.199999)
 [node name="dialogue_trigger" type="Node2D" unique_id=1617316960]
 script = ExtResource("1_o7blk")
 dialogues = Array[String](["My liege's decision-making skills have been suffering lately, I suspect due to a lack of rest. I would like a concotion that will grant him... eternal sleep, if you know what I mean.", "My liege has been just so exhausted from all the work he does, he barely has any... energy at bed time. I'd like something that can lift his spirits. I expect you not to say a word of my presence here..."])
-speaker_names = Array[String](["Eunich", "Imperial Concubine"])
+speaker_names = Array[String](["Eunuch", "Imperial Concubine"])
 
 [node name="sprite_sign" type="Sprite2D" parent="." unique_id=1524980114]
 scale = Vector2(2, 2)

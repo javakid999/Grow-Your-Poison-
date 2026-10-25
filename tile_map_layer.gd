@@ -56,9 +56,9 @@ func _process(delta: float) -> void:
 	hovered_cell = cell
 	on_hover_changed(cell)
 
-# ------------------------------
-# INTERACTION-INPUT HANDLING
-# ------------------------------
+# ---------------------------------------------
+# HANDLING INPUT WHILE ACCEPTING QUESTS
+# ---------------------------------------------
 
 var is_interacting = false
 
@@ -67,6 +67,10 @@ func _on_dialogue_trigger_dialogue_start() -> void:
 	
 func _on_dialogue_trigger_dialogue_over() -> void:
 	is_interacting = false
+
+# ---------------------------------------------
+# HANDLING INPUT
+# ---------------------------------------------
 
 func _input(event):
 	if event is InputEventMouseButton and !is_interacting:
