@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmqw76yhsf0x"]
 
-[ext_resource type="Script" uid="uid://ckinap6mmc2cf" path="res://scripts/player.gd" id="1_2qlof"]
+[ext_resource type="Script" uid="uid://ccyda3ixb0gk1" path="res://scripts/player.gd" id="1_2qlof"]
 [ext_resource type="Texture2D" uid="uid://b7yyi2wb8lx0s" path="res://assets/images/farmer/Player_Idle.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dsynpcvfvpas2" path="res://assets/images/farmer/Player_Walk.png" id="4_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://b54auwklii5e5" path="res://assets/audio/pop.mp3" id="5_rov4t"]
@@ -453,7 +453,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run_down",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -476,7 +476,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run_downleft",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -499,7 +499,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run_left",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -522,7 +522,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run_up",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -545,7 +545,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run_upleft",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rov4t"]
@@ -565,7 +565,7 @@ script = ExtResource("1_2qlof")
 texture_filter = 1
 scale = Vector2(0.055, 0.055)
 sprite_frames = SubResource("SpriteFrames_huuou")
-animation = &"idle_down"
+animation = &"run_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600345923]
 position = Vector2(0, 9.75)
