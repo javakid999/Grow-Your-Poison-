@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="5_07l7t"]
 [ext_resource type="Texture2D" uid="uid://bc7kr3011y8sv" path="res://Fantasy Crops/Fantasy Crops.png" id="5_dmuu5"]
 [ext_resource type="Texture2D" uid="uid://cexqg8fm62l8m" path="res://sky.png" id="6_jynu1"]
-[ext_resource type="Script" uid="uid://bblq758lw34le" path="res://player_wrapper.gd" id="5_jynu1"]
 [ext_resource type="PackedScene" uid="uid://dmqw76yhsf0x" path="res://scenes/player.tscn" id="7_dmuu5"]
 [ext_resource type="PackedScene" uid="uid://c88s58o4i17m0" path="res://scenes/dialogue_ui.tscn" id="7_v46g0"]
 [ext_resource type="PackedScene" uid="uid://d4hpefyvyso43" path="res://scenes/dialogue_trigger.tscn" id="8_kmnj1"]
@@ -192,19 +191,6 @@ font_size = 32
 [node name="Node2D" type="Node2D" unique_id=1641259238]
 texture_filter = 1
 
-[node name="Player" parent="." unique_id=1437705335 node_paths=PackedStringArray("camera") instance=ExtResource("4_07l7t")]
-z_index = 1
-position = Vector2(0, -1)
-camera = NodePath("Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2129106911]
-position = Vector2(98, -74)
-zoom = Vector2(1.1, 1.1)
-limit_left = -700
-limit_top = -700
-limit_right = 950
-limit_bottom = 820
-
 [node name="Tiles" type="Node2D" parent="." unique_id=41186338]
 script = ExtResource("2_07l7t")
 
@@ -264,3 +250,22 @@ layer = -1
 position = Vector2(584, 104)
 scale = Vector2(3, 3)
 texture = ExtResource("6_jynu1")
+
+[node name="player" parent="." unique_id=1254991437 instance=ExtResource("7_dmuu5")]
+position = Vector2(99, -73)
+
+[node name="Player#Camera2D" type="Camera2D" parent="player" unique_id=2129106911]
+position = Vector2(-0.25, -0.25)
+scale = Vector2(0.25, 0.25)
+zoom = Vector2(1.1, 1.1)
+limit_left = -700
+limit_top = -700
+limit_right = 950
+limit_bottom = 820
+
+[node name="Dialogue_UI" parent="." unique_id=863977405 instance=ExtResource("7_v46g0")]
+
+[node name="dialogue_trigger" parent="." unique_id=1617316960 instance=ExtResource("8_kmnj1")]
+
+[connection signal="dialogue_over" from="dialogue_trigger" to="player" method="_on_dialogue_trigger_dialogue_over"]
+[connection signal="dialogue_start" from="dialogue_trigger" to="player" method="_on_dialogue_trigger_dialogue_start"]
