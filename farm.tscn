@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://o4rf6yuuvmbs" path="res://Farm RPG FREE 16x16 - Tiny Asset Pack/Tileset/Tileset Grass Spring.png" id="3_t23pn"]
 [ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="5_07l7t"]
 [ext_resource type="Texture2D" uid="uid://bc7kr3011y8sv" path="res://Fantasy Crops/Fantasy Crops.png" id="5_dmuu5"]
-[ext_resource type="Texture2D" uid="uid://cexqg8fm62l8m" path="res://sky.png" id="6_jynu1"]
+[ext_resource type="Texture2D" uid="uid://3w2m568ekqtg" path="res://assets/images/sky/art_sky.jpg" id="5_v46g0"]
 [ext_resource type="PackedScene" uid="uid://dmqw76yhsf0x" path="res://scenes/player.tscn" id="7_dmuu5"]
 [ext_resource type="PackedScene" uid="uid://c88s58o4i17m0" path="res://scenes/dialogue_ui.tscn" id="7_v46g0"]
 [ext_resource type="PackedScene" uid="uid://d4hpefyvyso43" path="res://scenes/dialogue_trigger.tscn" id="8_kmnj1"]
+[ext_resource type="PackedScene" uid="uid://ss7u0o8cwpso" path="res://scenes/quest_submission.tscn" id="9_kmnj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l7t"]
 texture = ExtResource("3_t23pn")
@@ -247,9 +248,9 @@ label_settings = SubResource("LabelSettings_jynu1")
 layer = -1
 
 [node name="SkySprite" type="Sprite2D" parent="Sky" unique_id=2104645722]
-position = Vector2(584, 104)
-scale = Vector2(3, 3)
-texture = ExtResource("6_jynu1")
+position = Vector2(1318, 842)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_v46g0")
 
 [node name="Player" parent="." unique_id=1254991437 instance=ExtResource("7_dmuu5")]
 position = Vector2(99, -73)
@@ -266,6 +267,15 @@ limit_bottom = 820
 [node name="Dialogue_UI" parent="." unique_id=863977405 instance=ExtResource("7_v46g0")]
 
 [node name="dialogue_trigger" parent="." unique_id=1617316960 instance=ExtResource("8_kmnj1")]
+position = Vector2(328, -360)
+scale = Vector2(2, 2)
+
+[node name="QuestSubmission" parent="." unique_id=984915985 instance=ExtResource("9_kmnj1")]
+position = Vector2(592, -319)
+scale = Vector2(2, 2)
 
 [connection signal="dialogue_over" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_over"]
 [connection signal="dialogue_start" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_start"]
+[connection signal="quest_accepted" from="dialogue_trigger" to="QuestSubmission" method="quest_accepted"]
+[connection signal="quest_rejected" from="dialogue_trigger" to="QuestSubmission" method="quest_rejected"]
+[connection signal="quest_complete" from="QuestSubmission" to="dialogue_trigger" method="_on_quest_complete"]

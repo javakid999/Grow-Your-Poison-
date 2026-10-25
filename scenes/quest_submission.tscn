@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ss7u0o8cwpso"]
+
+[ext_resource type="Script" uid="uid://chra11e5nr5ff" path="res://scripts/quest_submission.gd" id="1_6ioo0"]
+[ext_resource type="Texture2D" uid="uid://c770x7l5crtvq" path="res://assets/images/obstacles/Foliage and clutter.png" id="1_82cfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huuou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_melk5"]
+bg_color = Color(0.81960785, 0.7372549, 0.65882355, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0bdj"]
+bg_color = Color(0.71045583, 0.6117681, 0.5168137, 1)
+
+[node name="QuestSubmission" type="Node2D" unique_id=984915985]
+script = ExtResource("1_6ioo0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2128014845]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1203871289]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_huuou")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1887756013]
+scale = Vector2(2, 2)
+texture = ExtResource("1_82cfh")
+region_enabled = true
+region_rect = Rect2(392.0003, 167.04263, 30.666687, 27.333344)
+
+[node name="SubmitButton" type="Button" parent="." unique_id=860741631]
+visible = false
+offset_left = -53.0
+offset_top = -64.0
+offset_right = 58.0
+offset_bottom = -33.0
+theme_override_colors/font_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_melk5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y0bdj")
+text = "Submit Items"
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

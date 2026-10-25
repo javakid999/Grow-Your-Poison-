@@ -11,12 +11,14 @@ extends Node2D
 # Path to dialogue_ui animation player instance in main scene
 @onready var dialogue_animation: AnimationPlayer = get_tree().current_scene.get_node("Dialogue_UI/canvas/animation_player")
 
+@onready var accept_button: Button = dialogue_ui.get_node("accept_button")
+@onready var reject_button: Button = dialogue_ui.get_node("reject_button")
 @onready var quest_button: Button = $quest_button
 
 @export var dialogues: Array[String]
 @export var speaker_names: Array[String]
 
-var current_dialogue: int = -1
+var current_dialogue: int = 0
 var started: bool = false
 
 signal dialogue_start
@@ -28,44 +30,69 @@ signal quest_rejected
 func _ready() -> void:
 	# Perhaps for when we add multiple lines of dialogue for one character.
 	# dialogue_ui.get_node("continue_button").connect("pressed", Callable(self, "continue_dialogue"))
-	dialogue_ui.get_node("accept_button").connect("pressed", Callable(self, "quest_accept"))
-	dialogue_ui.get_node("reject_button").connect("pressed", Callable(self, "quest_reject"))
+	quest_button.show()
+	accept_button.connect("pressed", Callable(self, "quest_accept"))
+	reject_button.connect("pressed", Callable(self, "quest_reject"))
+	dialogue_animation.animation_finished.connect(_on_animation_finished)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func start_dialogue() -> void:
-	print(current_dialogue)
 	if !started:
 		started = true
 		dialogue_ui.visible = true
 		dialogue_start.emit()
-		continue_dialogue()
+		
+		if current_dialogue < dialogues.size():
+			if !dialogue_ui.visible:
+				dialogue_ui.visible = true
+			speaker_name.text = speaker_names[current_dialogue]
+			speaker_dialogue.text = dialogues[current_dialogue]
+			accept_button.hide()
+			reject_button.hide()
+			dialogue_animation.play("RESET")
+			dialogue_animation.play("scroll")
 		
 func end_dialogue() -> void:
 	dialogue_ui.visible = false
-	started = false
 	dialogue_over.emit()
-	
+
+func _on_animation_finished(_anim_name: String) -> void:
+	accept_button.show()
+	reject_button.show()
+
+# QUEST HANDLING
+
 func quest_accept() -> void:
-	print("got accepted")
 	quest_accepted.emit()
+	quest_button.hide()
 	end_dialogue()
 	
 func quest_reject() -> void:
-	print("got rejected")
 	quest_rejected.emit()
 	end_dialogue()
 
-func continue_dialogue() -> void:
+func _on_quest_complete() -> void:
+	started = false
 	current_dialogue += 1
-	if current_dialogue < dialogues.size():
-		if !dialogue_ui.visible:
-			dialogue_ui.visible = true
-		speaker_name.text = speaker_names[current_dialogue]
-		speaker_dialogue.text = dialogues[current_dialogue]
-		dialogue_animation.play("RESET")
-		dialogue_animation.play("scroll")
-	else:
-		end_dialogue()
+	if current_dialogue >= dialogues.size():
+		current_dialogue = 0
+	quest_button.show()
+	
+	
+
+
+## Keeping in case we ever want more than one line of dialogue per character
+#func continue_dialogue() -> void:
+	## current_dialogue += 1
+	#if current_dialogue < dialogues.size():
+		#if !dialogue_ui.visible:
+			#dialogue_ui.visible = true
+		#speaker_name.text = speaker_names[current_dialogue]
+		#speaker_dialogue.text = dialogues[current_dialogue]
+		#dialogue_animation.play("RESET")
+		#dialogue_animation.play("scroll")
+	#else:
+		#end_dialogue()
