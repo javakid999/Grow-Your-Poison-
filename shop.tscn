@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://eya0dki5uc1d"]
+
+[ext_resource type="Texture2D" uid="uid://d1eai6ckhu8a2" path="res://shop_inventory.png" id="1_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://bc7kr3011y8sv" path="res://Fantasy Crops/Fantasy Crops.png" id="2_blqjs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgaav"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+
+[node name="Shop" type="Node2D" unique_id=2100869484]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1271872847]
+texture_filter = 1
+texture = ExtResource("1_e7rdd")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=397026568]
+position = Vector2(12, 12)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D2" unique_id=966132881]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 225.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Carrot Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D2" unique_id=1814038417]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D" unique_id=593395752]
+position = Vector2(12, 29)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D3" unique_id=184264786]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 287.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Magic Bean Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D3" unique_id=738424826]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D" unique_id=508737750]
+position = Vector2(12, 46)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D4" unique_id=283017189]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 224.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Gourd Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D4" unique_id=474055754]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D" unique_id=811368587]
+position = Vector2(12, 63)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D5" unique_id=1907004526]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 229.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Cactus Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D5" unique_id=1130457803]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D" unique_id=1874400885]
+position = Vector2(12, 80)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D6" unique_id=1975709366]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 200.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Kale Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D6" unique_id=1028578163]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D" unique_id=921616991]
+position = Vector2(12, 97)
+texture = ExtResource("2_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite2D/Sprite2D7" unique_id=762006207]
+offset_left = 14.999998
+offset_top = -4.0
+offset_right = 308.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+text = "Glowing Fruit Seeds: $10"
+label_settings = SubResource("LabelSettings_fgaav")
+
+[node name="Button" type="Button" parent="Sprite2D/Sprite2D7" unique_id=933454295]
+offset_left = 79.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BUY"
