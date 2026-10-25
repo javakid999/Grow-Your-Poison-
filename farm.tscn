@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b0m483dbtlqqj" path="res://tile_map_layer.gd" id="2_07l7t"]
 [ext_resource type="Texture2D" uid="uid://o4rf6yuuvmbs" path="res://Farm RPG FREE 16x16 - Tiny Asset Pack/Tileset/Tileset Grass Spring.png" id="3_t23pn"]
-[ext_resource type="PackedScene" uid="uid://yqhgqefk5wpv" path="res://player.tscn" id="4_07l7t"]
 [ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="5_07l7t"]
 [ext_resource type="Texture2D" uid="uid://bc7kr3011y8sv" path="res://Fantasy Crops/Fantasy Crops.png" id="5_dmuu5"]
 [ext_resource type="Texture2D" uid="uid://cexqg8fm62l8m" path="res://sky.png" id="6_jynu1"]
+[ext_resource type="Script" uid="uid://bblq758lw34le" path="res://player_wrapper.gd" id="5_jynu1"]
+[ext_resource type="PackedScene" uid="uid://dmqw76yhsf0x" path="res://scenes/player.tscn" id="7_dmuu5"]
+[ext_resource type="PackedScene" uid="uid://c88s58o4i17m0" path="res://scenes/dialogue_ui.tscn" id="7_v46g0"]
+[ext_resource type="PackedScene" uid="uid://d4hpefyvyso43" path="res://scenes/dialogue_trigger.tscn" id="8_kmnj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l7t"]
 texture = ExtResource("3_t23pn")

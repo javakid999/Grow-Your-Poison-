@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c88s58o4i17m0"]
+
+[ext_resource type="Texture2D" uid="uid://bs8tlwn0ompqt" path="res://assets/images/obstacles/Isometric Assets 2.png" id="1_dwk8m"]
+
+[sub_resource type="Animation" id="Animation_x0h1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("speaker_dialogue:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dwk8m"]
+resource_name = "scroll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("speaker_dialogue:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q285"]
+_data = {
+&"RESET": SubResource("Animation_x0h1o"),
+&"scroll": SubResource("Animation_dwk8m")
+}
+
+[node name="Dialogue_UI" type="Control" unique_id=863977405]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="canvas" type="CanvasLayer" parent="." unique_id=82008239]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="canvas" unique_id=748338962]
+offset_left = 74.0
+offset_top = 436.0
+offset_right = 1062.0
+offset_bottom = 607.0
+color = Color(0.8204178, 0.7360966, 0.6583089, 1)
+
+[node name="speaker_name" type="RichTextLabel" parent="canvas" unique_id=634300127]
+offset_left = 97.0
+offset_top = 451.0
+offset_right = 333.0
+offset_bottom = 483.0
+theme_override_colors/default_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Speaker Name"
+
+[node name="speaker_dialogue" type="RichTextLabel" parent="canvas" unique_id=1202087763]
+offset_left = 111.0
+offset_top = 487.0
+offset_right = 1022.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0.37304688, 0.18113291, 0.07220497, 1)
+text = "Dialogue Here"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="continue_button" type="Button" parent="canvas" unique_id=1466710280]
+visible = false
+offset_left = 521.0
+offset_top = 568.0
+offset_right = 600.0
+offset_bottom = 599.0
+text = "Continue"
+
+[node name="accept_button" type="Button" parent="canvas" unique_id=1579903808]
+offset_left = 978.0
+offset_top = 526.0
+offset_right = 1038.0
+offset_bottom = 557.0
+text = "Accept"
+
+[node name="reject_button" type="Button" parent="canvas" unique_id=1411211790]
+offset_left = 979.0
+offset_top = 566.0
+offset_right = 1035.0
+offset_bottom = 597.0
+text = "Reject"
+
+[node name="animation_player" type="AnimationPlayer" parent="canvas" unique_id=1984100332]
+libraries/ = SubResource("AnimationLibrary_6q285")
+speed_scale = 2.0
+
+[node name="speaker_sprite" type="Sprite2D" parent="canvas" unique_id=1949162503]
+z_index = -1
+position = Vector2(788, 325)
+texture = ExtResource("1_dwk8m")
+region_enabled = true
+region_rect = Rect2(1134.4695, 1687.3607, 610.5676, 846.62537)
