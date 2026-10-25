@@ -274,7 +274,9 @@ scale = Vector2(2, 2)
 position = Vector2(592, -319)
 scale = Vector2(2, 2)
 
+[connection signal="dialogue_over" from="dialogue_trigger" to="Tiles" method="_on_dialogue_trigger_dialogue_over"]
 [connection signal="dialogue_over" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_over"]
+[connection signal="dialogue_start" from="dialogue_trigger" to="Tiles" method="_on_dialogue_trigger_dialogue_start"]
 [connection signal="dialogue_start" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_start"]
 [connection signal="quest_accepted" from="dialogue_trigger" to="QuestSubmission" method="quest_accepted"]
 [connection signal="quest_rejected" from="dialogue_trigger" to="QuestSubmission" method="quest_rejected"]

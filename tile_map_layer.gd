@@ -55,8 +55,20 @@ func _process(delta: float) -> void:
 	hovered_cell = cell
 	on_hover_changed(cell)
 
+# ------------------------------
+# INTERACTION-INPUT HANDLING
+# ------------------------------
+
+var is_interacting = false
+
+func _on_dialogue_trigger_dialogue_start() -> void:
+	is_interacting = true
+	
+func _on_dialogue_trigger_dialogue_over() -> void:
+	is_interacting = false
+
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and !is_interacting:
 		# Check if it is the left mouse button and it was just pressed (not released)
 		
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -102,7 +114,8 @@ func _input(event):
 						plants.remove_at(plant_index)
 						placing_layer.set_cell(cell, 1, Vector2i(-1, -1))
 						
-	if event.is_action_pressed('debug_skip_day'):
+	# You can no longer skip the day while talking to someone
+	if event.is_action_pressed('debug_skip_day') and !is_interacting:
 		increment_day()
 
 func update_plants():
