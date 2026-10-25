@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://caslrn30veah1"]
+
+[ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="1_ib8eo"]
+[ext_resource type="Texture2D" uid="uid://dqq0cpnm3joun" path="res://halloween-cauldron-with-eyeball-illustration-isolated_18591-83699.png" id="2_jb4rq"]
+[ext_resource type="Texture2D" uid="uid://qjwrh5yd0pj1" path="res://open-vintage-book-pixel-art-style-retro-digital-illustration-literature-knowledge-isolated-transparent-background-414907788.png" id="3_kwwbn"]
+[ext_resource type="Script" uid="uid://co2d7dmuab8kt" path="res://area_2d.gd" id="4_12jf0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ik07r"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik07r"]
+
+[node name="Node2D" unique_id=446752292 instance=ExtResource("1_ib8eo")]
+script = null
+
+[node name="Inventory" parent="." index="0" unique_id=187665229]
+position = Vector2(323, 535)
+scale = Vector2(4.6666665, 4.6666665)
+
+[node name="Slot1" parent="Inventory" index="0" unique_id=916600873]
+z_index = 1
+
+[node name="background" type="Sprite2D" parent="." index="1" unique_id=398415609]
+z_index = -1
+position = Vector2(575.00006, 320)
+scale = Vector2(11.506358, 6.4615145)
+texture = SubResource("PlaceholderTexture2D_ik07r")
+
+[node name="cauldron1" type="Sprite2D" parent="." index="2" unique_id=1121129317]
+position = Vector2(232, 328)
+scale = Vector2(0.46824327, 0.46824327)
+texture = ExtResource("2_jb4rq")
+
+[node name="cauldron2" type="Sprite2D" parent="." index="3" unique_id=1214431928]
+position = Vector2(576, 328)
+scale = Vector2(0.46824327, 0.46824327)
+texture = ExtResource("2_jb4rq")
+
+[node name="cauldron3" type="Sprite2D" parent="." index="4" unique_id=964273550]
+position = Vector2(920, 328)
+scale = Vector2(0.46824327, 0.46824327)
+texture = ExtResource("2_jb4rq")
+
+[node name="instruction-book" type="Sprite2D" parent="." index="5" unique_id=609441981]
+position = Vector2(1052, 99)
+scale = Vector2(0.22875126, 0.22875126)
+texture = ExtResource("3_kwwbn")
+
+[node name="Area2D" type="Area2D" parent="instruction-book" index="0" unique_id=363342353]
+script = ExtResource("4_12jf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="instruction-book/Area2D" index="0" unique_id=1153971379]
+visible = false
+position = Vector2(3.3608398, 10.414581)
+scale = Vector2(-40.167507, 36.363953)
+shape = SubResource("RectangleShape2D_ik07r")
