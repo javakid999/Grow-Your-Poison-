@@ -1,10 +1,10 @@
 extends Node2D
 
 var item_ids = [
-	0, 7, 14, 21, 28, 35	
+	6, 41, 13, 27, 20, 34	
 ]
 var item_count = [
-	2,2,2,2,2,2
+	9,9,9,9,9,9
 ]
 
 const item_names = {
@@ -19,7 +19,10 @@ const item_names = {
 	'28': 'Kale Seeds',
 	'34': 'Kale',
 	'35': 'Glowing Fruit Seeds',
-	'41': 'Glowing Fruit'
+	'41': 'Glowing Fruit',
+	'42': 'Potion 1',
+	'43': 'Potion 2',
+	'44': 'Potion 3',
 }
 
 const placeable_ids = [
@@ -127,3 +130,13 @@ func _input(event):
 	if event.is_action_pressed('shovel slot'):
 		selected_slot = -1
 		update_selection_ghost()
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var found = 0
+		for i in range(6): if found == 0:
+			var slot = items[i]
+			if slot.visible and slot.get_rect().has_point(slot.to_local(get_global_mouse_position())):
+				selected_slot = i
+				update_selection_ghost()
+				found = 1
+			else:
+				pass

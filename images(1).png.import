@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqq0cpnm3joun"
-path="res://.godot/imported/halloween-cauldron-with-eyeball-illustration-isolated_18591-83699.png-0420f37009e75ac06b9710e5b90649e7.ctex"
+uid="uid://bqysas1wo1lwk"
+path="res://.godot/imported/images(1).png-497e5ca76bed669226233af43251a5e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://halloween-cauldron-with-eyeball-illustration-isolated_18591-83699.png"
-dest_files=["res://.godot/imported/halloween-cauldron-with-eyeball-illustration-isolated_18591-83699.png-0420f37009e75ac06b9710e5b90649e7.ctex"]
+source_file="res://images(1).png"
+dest_files=["res://.godot/imported/images(1).png-497e5ca76bed669226233af43251a5e7.ctex"]
 
 [params]
 

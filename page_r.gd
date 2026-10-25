@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_r_pressed() -> void:
-	pass # Replace with function body.
+	get_parent().get_parent().turn(1)

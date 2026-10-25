@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://caslrn30veah1"]
 
 [ext_resource type="PackedScene" uid="uid://bmexgepuom3tu" path="res://inventory.tscn" id="1_ib8eo"]
-[ext_resource type="Texture2D" uid="uid://dqq0cpnm3joun" path="res://halloween-cauldron-with-eyeball-illustration-isolated_18591-83699.png" id="2_jb4rq"]
+[ext_resource type="Texture2D" uid="uid://c4v48bsh4ru7u" path="res://pixel-art-8-bit-retro-260nw-2513324701.webp" id="2_4h6b2"]
 [ext_resource type="Texture2D" uid="uid://qjwrh5yd0pj1" path="res://open-vintage-book-pixel-art-style-retro-digital-illustration-literature-knowledge-isolated-transparent-background-414907788.png" id="3_kwwbn"]
 [ext_resource type="Script" uid="uid://co2d7dmuab8kt" path="res://area_2d.gd" id="4_12jf0"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ik07r"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://ctmykub7ocinv" path="res://images(2).png" id="5_e4nf6"]
+[ext_resource type="Script" uid="uid://rfhkryjjggdw" path="res://cauldron_1.gd" id="6_bxbqo"]
+[ext_resource type="Texture2D" uid="uid://dt3c168nkgfkw" path="res://images.png" id="6_ccqmy"]
+[ext_resource type="Texture2D" uid="uid://bqysas1wo1lwk" path="res://images(1).png" id="7_bxbqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik07r"]
 
 [node name="Node2D" unique_id=446752292 instance=ExtResource("1_ib8eo")]
-script = null
+scale = Vector2(1.0534855, 1.0534855)
 
 [node name="Inventory" parent="." index="0" unique_id=187665229]
 position = Vector2(323, 535)
@@ -22,26 +23,11 @@ z_index = 1
 
 [node name="background" type="Sprite2D" parent="." index="1" unique_id=398415609]
 z_index = -1
-position = Vector2(575.00006, 320)
-scale = Vector2(11.506358, 6.4615145)
-texture = SubResource("PlaceholderTexture2D_ik07r")
+position = Vector2(609.40564, 362.60587)
+scale = Vector2(4.8237724, 2.7088392)
+texture = ExtResource("2_4h6b2")
 
-[node name="cauldron1" type="Sprite2D" parent="." index="2" unique_id=1121129317]
-position = Vector2(232, 328)
-scale = Vector2(0.46824327, 0.46824327)
-texture = ExtResource("2_jb4rq")
-
-[node name="cauldron2" type="Sprite2D" parent="." index="3" unique_id=1214431928]
-position = Vector2(576, 328)
-scale = Vector2(0.46824327, 0.46824327)
-texture = ExtResource("2_jb4rq")
-
-[node name="cauldron3" type="Sprite2D" parent="." index="4" unique_id=964273550]
-position = Vector2(920, 328)
-scale = Vector2(0.46824327, 0.46824327)
-texture = ExtResource("2_jb4rq")
-
-[node name="instruction-book" type="Sprite2D" parent="." index="5" unique_id=609441981]
+[node name="instruction-book" type="Sprite2D" parent="." index="2" unique_id=609441981]
 position = Vector2(1052, 99)
 scale = Vector2(0.22875126, 0.22875126)
 texture = ExtResource("3_kwwbn")
@@ -54,3 +40,21 @@ visible = false
 position = Vector2(3.3608398, 10.414581)
 scale = Vector2(-40.167507, 36.363953)
 shape = SubResource("RectangleShape2D_ik07r")
+
+[node name="SelectionLabel" parent="." index="3" unique_id=455544875]
+metadata/_edit_use_anchors_ = true
+
+[node name="cauldron1" type="Sprite2D" parent="." index="4" unique_id=1568150510]
+position = Vector2(265.7844, 417.66116)
+texture = ExtResource("5_e4nf6")
+script = ExtResource("6_bxbqo")
+
+[node name="cauldron2" type="Sprite2D" parent="." index="5" unique_id=410225615]
+position = Vector2(577.13184, 417.6612)
+texture = ExtResource("6_ccqmy")
+script = ExtResource("6_bxbqo")
+
+[node name="cauldron3" type="Sprite2D" parent="." index="6" unique_id=770434409]
+position = Vector2(888.4793, 417.66122)
+texture = ExtResource("7_bxbqo")
+script = ExtResource("6_bxbqo")

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://d4enq13tr2j2e"]
 
 [ext_resource type="Texture2D" uid="uid://brjrkfkmmafq1" path="res://UIBook.png" id="1_22idc"]
+[ext_resource type="Script" uid="uid://cfbwwtk14etrw" path="res://book_gui.gd" id="1_daxw2"]
 [ext_resource type="Script" uid="uid://cee83bad707rx" path="res://page_l.gd" id="2_bej8o"]
 [ext_resource type="Texture2D" uid="uid://c7pw80irgoa2q" path="res://pixel-art-four-red-arrows-pointing-center-red-arrows-button-vector-icon-8bit-game_360488-1503.png" id="2_j53b5"]
 [ext_resource type="Script" uid="uid://cvsv6qpco6p2b" path="res://page_r.gd" id="3_daxw2"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=759815117]
+script = ExtResource("1_daxw2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360359954]
 position = Vector2(587.21826, 328.00082)
