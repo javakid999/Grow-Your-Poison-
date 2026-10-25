@@ -16,7 +16,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_huuou"]
-size = Vector2(10.199999, 12)
+size = Vector2(2.2, 10.199999)
 
 [node name="dialogue_trigger" type="Node2D" unique_id=1617316960]
 script = ExtResource("1_o7blk")
@@ -42,7 +42,7 @@ text = "New Quest!"
 [node name="trigger" type="StaticBody2D" parent="." unique_id=1635885273]
 
 [node name="collision" type="CollisionShape2D" parent="trigger" unique_id=1295929292]
-position = Vector2(5.5, 20.000002)
+position = Vector2(14.5, 47.5)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_huuou")
 

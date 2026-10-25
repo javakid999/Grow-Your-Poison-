@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c770x7l5crtvq" path="res://assets/images/obstacles/Foliage and clutter.png" id="1_82cfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_huuou"]
+size = Vector2(16.333334, 18.666666)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_melk5"]
 bg_color = Color(0.81960785, 0.7372549, 0.65882355, 1)
@@ -30,6 +31,7 @@ script = ExtResource("1_6ioo0")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2128014845]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1203871289]
+position = Vector2(0.50000167, 23)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_huuou")
 
