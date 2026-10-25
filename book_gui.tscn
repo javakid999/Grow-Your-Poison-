@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://d4enq13tr2j2e"]
+
+[ext_resource type="Texture2D" uid="uid://brjrkfkmmafq1" path="res://UIBook.png" id="1_22idc"]
+[ext_resource type="Script" uid="uid://cee83bad707rx" path="res://page_l.gd" id="2_bej8o"]
+[ext_resource type="Texture2D" uid="uid://c7pw80irgoa2q" path="res://pixel-art-four-red-arrows-pointing-center-red-arrows-button-vector-icon-8bit-game_360488-1503.png" id="2_j53b5"]
+[ext_resource type="Script" uid="uid://cvsv6qpco6p2b" path="res://page_r.gd" id="3_daxw2"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=759815117]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360359954]
+position = Vector2(587.21826, 328.00082)
+scale = Vector2(0.6000026, 0.6000026)
+texture = ExtResource("1_22idc")
+
+[node name="PageL" type="Label" parent="Sprite2D" unique_id=718674030]
+offset_left = -466.66464
+offset_top = -253.33224
+offset_right = -426.66464
+offset_bottom = -230.33224
+scale = Vector2(1.866663, 1.866663)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Potion of Name1
+Description of effects and
+other information
+- X Ingredient1
+- Y Ingredient2
+- Z Ingredient3
+- Stir and let sit for N days"
+script = ExtResource("2_bej8o")
+
+[node name="PageR" type="Label" parent="Sprite2D" unique_id=1395670338]
+offset_left = 39.999832
+offset_top = -253.33224
+offset_right = 239.99983
+offset_bottom = -74.332245
+scale = Vector2(1.866663, 1.866663)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Potion of Name2
+Description of effects and
+other information
+- X Ingredient1
+- Y Ingredient2
+- Z Ingredient3
+- Stir and let sit for N days"
+script = ExtResource("3_daxw2")
+
+[node name="ButtonL" type="Button" parent="." unique_id=787927438]
+offset_left = 267.21823
+offset_top = 424.0008
+offset_right = 494.21826
+offset_bottom = 640.0008
+scale = Vector2(-0.4018424, 0.39999998)
+icon = ExtResource("2_j53b5")
+flat = true
+
+[node name="ButtonR" type="Button" parent="." unique_id=664670066]
+offset_left = 907.21826
+offset_top = 424.00085
+offset_right = 1134.2183
+offset_bottom = 640.00085
+scale = Vector2(0.39999998, 0.39999998)
+icon = ExtResource("2_j53b5")
+flat = true
+
+[connection signal="pressed" from="ButtonL" to="Sprite2D/PageL" method="_on_button_l_pressed"]
+[connection signal="pressed" from="ButtonR" to="Sprite2D/PageR" method="_on_button_r_pressed"]
