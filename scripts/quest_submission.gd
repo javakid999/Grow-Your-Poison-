@@ -6,6 +6,7 @@ var quest_active: bool
 var rejected_count: int = 0
 
 signal quest_complete
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,8 @@ func quest_accepted() -> void:
 func quest_rejected() -> void:
 	rejected_count += 1
 	quest_complete.emit()
+	if rejected_count >= 3:
+		game_over.emit()
 
 func _on_submit_button_pressed() -> void:
 	quest_active = false

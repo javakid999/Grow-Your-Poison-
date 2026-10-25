@@ -19,3 +19,6 @@ func show_ending():
 func _input(event):
 	if event.is_action_pressed('debug_end_game'):
 		show_ending()
+
+func _on_quest_submission_game_over() -> void:
+	show_ending()
