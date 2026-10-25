@@ -2,6 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://bs8tlwn0ompqt" path="res://assets/images/obstacles/Isometric Assets 2.png" id="1_dwk8m"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ioo0"]
+bg_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_melk5"]
+bg_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="Animation" id="Animation_x0h1o"]
 length = 0.001
 tracks/0/type = "value"
@@ -54,7 +68,7 @@ offset_left = 74.0
 offset_top = 436.0
 offset_right = 1062.0
 offset_bottom = 607.0
-color = Color(0.8204178, 0.7360966, 0.6583089, 1)
+color = Color(0.81960785, 0.7372549, 0.65882355, 1)
 
 [node name="speaker_name" type="RichTextLabel" parent="canvas" unique_id=634300127]
 offset_left = 97.0
@@ -88,6 +102,7 @@ offset_left = 978.0
 offset_top = 526.0
 offset_right = 1038.0
 offset_bottom = 557.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ioo0")
 text = "Accept"
 
 [node name="reject_button" type="Button" parent="canvas" unique_id=1411211790]
@@ -95,11 +110,12 @@ offset_left = 979.0
 offset_top = 566.0
 offset_right = 1035.0
 offset_bottom = 597.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_melk5")
 text = "Reject"
 
 [node name="animation_player" type="AnimationPlayer" parent="canvas" unique_id=1984100332]
 libraries/ = SubResource("AnimationLibrary_6q285")
-speed_scale = 2.0
+speed_scale = 0.5
 
 [node name="speaker_sprite" type="Sprite2D" parent="canvas" unique_id=1949162503]
 z_index = -1
