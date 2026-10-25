@@ -2,14 +2,13 @@ extends Node2D
 
 # Path to dialogue_ui instance in main scene
 @onready var dialogue_ui: CanvasLayer = get_tree().current_scene.get_node("Dialogue_UI/canvas")
-# Path to dialogue_ui speaker_name instance in main scene
-@onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("Dialogue_UI/canvas/speaker_name")
-# Path to dialogue_ui speaker_dialogue instance in main scene
-@onready var speaker_dialogue: RichTextLabel = get_tree().current_scene.get_node("Dialogue_UI/canvas/speaker_dialogue")
+@onready var speaker_name: RichTextLabel = dialogue_ui.get_node("speaker_name")
+@onready var speaker_dialogue: RichTextLabel = dialogue_ui.get_node("speaker_dialogue")
+@onready var dialogue_animation: AnimationPlayer = dialogue_ui.get_node("animation_player")
+@onready var speaker_sprite: Sprite2D = dialogue_ui.get_node("speaker_sprite")
+
 # Path to player node in main scene
 @onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
-# Path to dialogue_ui animation player instance in main scene
-@onready var dialogue_animation: AnimationPlayer = get_tree().current_scene.get_node("Dialogue_UI/canvas/animation_player")
 
 @onready var accept_button: Button = dialogue_ui.get_node("accept_button")
 @onready var reject_button: Button = dialogue_ui.get_node("reject_button")
@@ -17,6 +16,8 @@ extends Node2D
 
 @export var dialogues: Array[String]
 @export var speaker_names: Array[String]
+
+const speaker_filepath = "res://assets/images/character_sprites/"
 
 var current_dialogue: int = 0
 var started: bool = false
@@ -50,6 +51,7 @@ func start_dialogue() -> void:
 				dialogue_ui.visible = true
 			speaker_name.text = speaker_names[current_dialogue]
 			speaker_dialogue.text = dialogues[current_dialogue]
+			speaker_sprite.texture = load(speaker_filepath + speaker_names[current_dialogue] + ".png")
 			accept_button.hide()
 			reject_button.hide()
 			dialogue_animation.play("RESET")
