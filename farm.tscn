@@ -313,4 +313,5 @@ autoplay = true
 [connection signal="dialogue_start" from="dialogue_trigger" to="Player" method="_on_dialogue_trigger_dialogue_start"]
 [connection signal="quest_accepted" from="dialogue_trigger" to="QuestSubmission" method="quest_accepted"]
 [connection signal="quest_rejected" from="dialogue_trigger" to="QuestSubmission" method="quest_rejected"]
+[connection signal="game_over" from="QuestSubmission" to="GameOver" method="_on_quest_submission_game_over"]
 [connection signal="quest_complete" from="QuestSubmission" to="dialogue_trigger" method="_on_quest_complete"]
