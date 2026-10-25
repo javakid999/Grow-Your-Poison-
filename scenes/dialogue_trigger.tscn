@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d4hpefyvyso43"]
+
+[ext_resource type="Script" uid="uid://c1tcrcw8eirob" path="res://scripts/dialogue_trigger.gd" id="1_o7blk"]
+[ext_resource type="Texture2D" uid="uid://c770x7l5crtvq" path="res://assets/images/obstacles/Foliage and clutter.png" id="2_wktwx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huuou"]
+bg_color = Color(0.81960785, 0.7372549, 0.65882355, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huuou"]
+size = Vector2(2.2, 10.199999)
+
+[node name="dialogue_trigger" type="Node2D" unique_id=1617316960]
+script = ExtResource("1_o7blk")
+dialogues = Array[String](["My liege's decision-making skills have been suffering lately, I suspect due to a lack of rest. I would like a concotion that will grant him... eternal sleep, if you know what I mean.", "My liege has been just so exhausted from all the work he does, he barely has any... energy at bed time. I'd like something that can lift his spirits. I expect you not to say a word of my presence here..."])
+speaker_names = Array[String](["Eunich", "Imperial Concubine"])
+
+[node name="sprite_sign" type="Sprite2D" parent="." unique_id=1524980114]
+scale = Vector2(2, 2)
+texture = ExtResource("2_wktwx")
+region_enabled = true
+region_rect = Rect2(326.53345, 94.40002, 35.200012, 57.20002)
+
+[node name="quest_button" type="Button" parent="." unique_id=285920465]
+offset_left = -74.0
+offset_top = -9.0
+offset_right = 24.0
+offset_bottom = 22.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.37254903, 0.18039216, 0.07058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_huuou")
+text = "New Quest!"
+
+[node name="trigger" type="StaticBody2D" parent="." unique_id=1635885273]
+
+[node name="collision" type="CollisionShape2D" parent="trigger" unique_id=1295929292]
+position = Vector2(14.5, 47.5)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_huuou")
+
+[connection signal="pressed" from="quest_button" to="." method="start_dialogue"]

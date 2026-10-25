@@ -2,9 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://cfe0vus4ik0jx" path="res://Sample-InventorySlotsSet.png" id="1_pohso"]
 [ext_resource type="Script" uid="uid://cvvj7r1v6c4il" path="res://inventory.gd" id="1_psafj"]
-[ext_resource type="Texture2D" uid="uid://p7ogceg20aml" path="res://plants pack/plants.png" id="3_5tt2m"]
+[ext_resource type="Texture2D" uid="uid://bc7kr3011y8sv" path="res://Fantasy Crops/Fantasy Crops.png" id="3_mrqgh"]
+[ext_resource type="Texture2D" uid="uid://80ampgm83y7v" path="res://inventory_selected_ghost.png" id="4_mrqgh"]
 
-[node name="Node2D" type="Node2D" unique_id=446752292]
+[sub_resource type="LabelSettings" id="LabelSettings_7spbl"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_07l7t"]
+font_size = 32
+
+[node name="Inventory" type="Node2D" unique_id=446752292]
+scale = Vector2(4, 4)
 script = ExtResource("1_psafj")
 
 [node name="Inventory" type="Sprite2D" parent="." unique_id=187665229]
@@ -13,8 +21,113 @@ texture = ExtResource("1_pohso")
 centered = false
 
 [node name="Slot1" type="Sprite2D" parent="Inventory" unique_id=916600873]
+z_index = 2
 position = Vector2(12, 12)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_5tt2m")
+texture = ExtResource("3_mrqgh")
 region_enabled = true
-region_rect = Rect2(3, 3, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot1" unique_id=64971817]
+offset_right = 51.0
+offset_bottom = 42.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot2" type="Sprite2D" parent="Inventory" unique_id=715975160]
+z_index = 1
+position = Vector2(29.000002, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_mrqgh")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot2" unique_id=84746425]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot3" type="Sprite2D" parent="Inventory" unique_id=2098754332]
+z_index = 1
+position = Vector2(46.000004, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_mrqgh")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot3" unique_id=950717629]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot4" type="Sprite2D" parent="Inventory" unique_id=1865667143]
+z_index = 1
+position = Vector2(63.000008, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_mrqgh")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot4" unique_id=1410214536]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot5" type="Sprite2D" parent="Inventory" unique_id=1330243481]
+z_index = 1
+position = Vector2(80, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_mrqgh")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot5" unique_id=1262201128]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="Sprite2D" parent="Inventory" unique_id=1742966367]
+z_index = 1
+position = Vector2(97, 12)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_mrqgh")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)
+
+[node name="Label" type="Label" parent="Inventory/Slot6" unique_id=1228498379]
+offset_right = 9.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "100"
+label_settings = SubResource("LabelSettings_7spbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectionGhost" type="Sprite2D" parent="Inventory" unique_id=692980105]
+modulate = Color(1, 1, 1, 0.5686275)
+position = Vector2(4, 4)
+texture = ExtResource("4_mrqgh")
+centered = false
+
+[node name="SelectionLabel" type="Label" parent="." unique_id=455544875]
+offset_left = 16.000002
+offset_top = 22.0
+offset_right = 415.99997
+offset_bottom = 67.0
+scale = Vector2(0.2, 0.2)
+text = "Corn Seeds"
+label_settings = SubResource("LabelSettings_07l7t")
+horizontal_alignment = 1
